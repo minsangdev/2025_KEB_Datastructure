@@ -1,11 +1,10 @@
-def is_even(n) -> bool:
-    """
-    functon of define even
-    :param n: integer
-    :return: IsEven True, is not even False
-    """
-    return not n & 1
+def dec_oct(n) -> int:
+    if n == 0:
+        return ""
+    else:
+        return dec_oct(n // 8) + str(n % 8)
 
 
 n = int(input())
-print(is_even(n))
+print(dec_oct(n))
+# print(n, oct(n))
