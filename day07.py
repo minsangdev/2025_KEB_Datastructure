@@ -64,6 +64,7 @@ if __name__ == "__main__":
     l.remove(8)
     print(l)
 
+    # a
     # l = LinkedList()
     # i = 0
     # while i < 20:
