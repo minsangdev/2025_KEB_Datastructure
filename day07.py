@@ -14,29 +14,29 @@ class Queue:
         self._size = self._size + 1
         node = Node(data)
         if self.rear is None:
-            self.front=node
-            self.rear=node
+            self.front = node
+            self.rear = node
         else:
-            self.rear.next=node
-            self.rear=node
+            self.rear.next = node
+            self.rear = node  # increase rear
 
 
     def dequeue(self):
         if self.front is None:
             raise IndexError('dequeue from empty queue')
-        self._size=self._size-1
-        temp = self.front
-        self.front = self.front.next
+        self._size = self._size - 1
+        temp = self.front  # backup
+        self.front = self.front.next  # update
         if self.front is None:
             self.rear = None
         return temp.data
 
 
-    def size(self):
+    def size(self) -> int:
         return self._size
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     q = Queue()
     q.enqueue(7)
     q.enqueue(-11)
